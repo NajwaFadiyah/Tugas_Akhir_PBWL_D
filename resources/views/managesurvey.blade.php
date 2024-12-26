@@ -18,7 +18,7 @@
       </div>
     </div>
     <ul>
-        <li><i class="fa-solid fa-gauge"></i> <a href="/">Dashboard</a></li>
+        <li><i class="fa-solid fa-gauge"></i> <a href="/dashboard">Dashboard</a></li>
         <li><i class="fa-solid fa-list"></i> <a href="/managesurvey">Manage Survey</a></li>
         <li><i class="fa-solid fa-user-tie"></i> <a href="/managedosen">Manage Dosen</a></li>
     </ul>
