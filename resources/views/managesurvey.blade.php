@@ -159,7 +159,7 @@
   <div class="divider"></div>
 
   <div class="content">
-    <h1>Selamat Datang di Halaman Admin!!!</h1>
+    <h1>Manage Survey</h1>
   </div>
   
 </body>

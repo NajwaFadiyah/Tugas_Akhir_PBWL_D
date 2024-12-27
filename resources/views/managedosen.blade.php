@@ -159,8 +159,7 @@
   <div class="divider"></div>
 
   <div class="content">
-    <h1>Selamat Datang di Halaman Admin!!!</h1>
+    <h1>Manage Dosen</h1>
   </div>
- 
 </body>
 </html>
