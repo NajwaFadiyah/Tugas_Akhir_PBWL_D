@@ -1,19 +1,21 @@
 <?php
 
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\formController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
+// Untuk FormController
+Route::resource('/', formController::class);
+
 
 Route::get('admin', function () {
-    return view('dashboard');
+    return view('admin/dashboard');
 });
 
 Route::get('managesurvey', function () {
-    return view('managesurvey');
+    return view('admin/managesurvey');
 });
 
 Route::get('managedosen', function () {
-    return view('managedosen');
+    return view('admin/managedosen');
 });
