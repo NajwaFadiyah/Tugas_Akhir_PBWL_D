@@ -74,6 +74,17 @@
   <div style="background-color: #0B7BB0">
     <!-- Hero Section -->
     <div id="home" class="row ms-5 me-5">
+      <div class="row">
+        <div class="col-sm-12">
+          @if (Session::has('success'))
+            <div class="pt-3">
+              <div class="alert alert-success">
+                {{ Session::get('success') }}
+              </div>
+            </div>
+          @endif
+        </div>
+      </div>
       <div class="col-6 ps-5 mb-5">
         <section class="text-left text-justify py-5 text-white">
           <h1><b>SELAMAT DATANG!</b></h1>
@@ -103,48 +114,47 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <form class="text-justify" action="">
+                <form class="text-justify" action="/" method="POST">
+                  @csrf
                   <div class="mb-3">
-                    <label>Nama Mahasiswa</label>
-                    <input type="text" class="form-control" placeholder="Masukkan nama Anda">
+                    <label for="">Nama Mahasiswa</label>
+                    <input type="text" name="nama_mahasiswa" class="form-control" placeholder="Masukkan nama Anda">
                   </div>
                   <hr>
                   <div class="mb-3">
-                    <label>NIM</label>
-                    <input type="number" class="form-control" placeholder="Masukkan NIM Anda">
+                    <label for="">NIM</label>
+                    <input type="number" name="nim" class="form-control" placeholder="Masukkan NIM Anda">
                   </div>
                   <hr>
                   <div class="mb-3">
                     <label>Program Studi Sistem Informasi</label><br>
-                    <label>Semester:</label>
-                    <select class="form-select">
+                    <label for="">Semester:</label>
+                    <select name="semester" id="" class="form-select">
                       <option>Pilih Semester</option>
                       <option>1</option>
-                      <option>2</option>
                       <option>3</option>
-                      <option>4</option>
                       <option>5</option>
-                      <option>6</option>
                       <option>7</option>
-                      <option>8</option>
                     </select>
                   </div>
                   <hr>
                   <div class="mb-3">
-                    <label>Nama Dosen</label>
-                    <select class="form-select">
+                    <label for="">Nama Dosen</label>
+                    <select name="nama_dosen" id="" class="form-select">
                       <option class="disabled">Pilih Dosen</option>
-                      <option>Dosen A</option>
-                      <option>Dosen B</option>
+                      <option>Rakhmat Kurniawan R, S.T., M.Kom</option>
+                      <option>Muhamad Alda, S.Kom, M.S.I</option>
+                      <option>Samsudin, ST, M.Kom</option>
+                      <option>Suendri, M.Kom</option>
                     </select>
                   </div>
                   <hr>
                   <div class="mb-3">
-                    <label>Matakuliah</label>
-                    <select class="form-select">
-                      <option class="disabled">Pilih Dosen</option>
-                      <option>Dosen A</option>
-                      <option>Dosen B</option>
+                    <label for="">Matakuliah</label>
+                    <select name="matkul" id="" class="form-select">
+                      <option class="disabled">Pilih Mata Kuliah Yang Diajarkan</option>
+                      <option>Pengantar Ilmu Komputer</option>
+                      <option>Algoritma & Pemrograman Terstruktur</option>
                     </select>
                   </div>
                   <hr>
@@ -160,66 +170,66 @@
                       4 =  Sangat Puas <br>
                       <hr>
                     </p>
-                    <label>1. Dosen selalu berpenampilan rapi, bersih dan menarik</label><br>
-                    <input type="radio" name="materi" value="1"> 1
-                    <input type="radio" name="materi" value="2"> 2
-                    <input type="radio" name="materi" value="3"> 3
-                    <input type="radio" name="materi" value="4"> 4
+                    <label for="">1. Dosen selalu berpenampilan rapi, bersih dan menarik</label><br>
+                    <input type="radio" name="materi" value="Tidak Puas"> 1
+                    <input type="radio" name="materi" value="Cukup Puas"> 2
+                    <input type="radio" name="materi" value="Puas"> 3
+                    <input type="radio" name="materi" value="Sangat Puas"> 4
                   </div>
                   <hr>
                   <div class="mb-3">
-                    <label>2. Dosen transparansi dalam pemberian nilai</label><br>
-                    <input type="radio" name="materi" value="1"> 1
-                    <input type="radio" name="materi" value="2"> 2
-                    <input type="radio" name="materi" value="3"> 3
-                    <input type="radio" name="materi" value="4"> 4
+                    <label for="">2. Dosen transparansi dalam pemberian nilai</label><br>
+                    <input type="radio" name="materi1" value="Tidak Puas"> 1
+                    <input type="radio" name="materi1" value="Cukup Puas"> 2
+                    <input type="radio" name="materi1" value="Puas"> 3
+                    <input type="radio" name="materi1" value="Sangat Puas"> 4
                   </div>
                   <hr>
                   <div class="mb-3">
-                    <label>3. Dosen selalu menggunakan media pembelajaran dalam perkuliahaan (LCD, Laptop dengan infocus dsb)</label><br>
-                    <input type="radio" name="materi" value="1"> 1
-                    <input type="radio" name="materi" value="2"> 2
-                    <input type="radio" name="materi" value="3"> 3
-                    <input type="radio" name="materi" value="4"> 4
+                    <label for="">3. Dosen selalu menggunakan media pembelajaran dalam perkuliahaan (LCD, Laptop dengan infocus dsb)</label><br>
+                    <input type="radio" name="materi2" value="Tidak Puas"> 1
+                    <input type="radio" name="materi2" value="Cukup Puas"> 2
+                    <input type="radio" name="materi2" value="Puas"> 3
+                    <input type="radio" name="materi2" value="Sangat Puas"> 4
                   </div>
                   <hr>
                   <div class="mb-3">
-                    <label>4. Dosen membuat dan melaksanakan perkuliahan sesuai dengan kontrak dan Silabus/Rencana Perkuliahan Semester (RPS)</label><br>
-                    <input type="radio" name="materi" value="1"> 1
-                    <input type="radio" name="materi" value="2"> 2
-                    <input type="radio" name="materi" value="3"> 3
-                    <input type="radio" name="materi" value="4"> 4
+                    <label for="">4. Dosen membuat dan melaksanakan perkuliahan sesuai dengan kontrak dan Silabus/Rencana Perkuliahan Semester (RPS)</label><br>
+                    <input type="radio" name="materi3" value="Tidak Puas"> 1
+                    <input type="radio" name="materi3" value="Cukup Puas"> 2
+                    <input type="radio" name="materi3" value="Puas"> 3
+                    <input type="radio" name="materi3" value="Sangat Puas"> 4
                   </div>
                   <hr>
                   <div class="mb-3">
-                    <label>5. Dosen selalu siap membantu mahasiswa baik di jam perkuliahan maupun di luar jam perkuliahan sepanjang etis dan moralis</label><br>
-                    <input type="radio" name="materi" value="1"> 1
-                    <input type="radio" name="materi" value="2"> 2
-                    <input type="radio" name="materi" value="3"> 3
-                    <input type="radio" name="materi" value="4"> 4
+                    <label for="">5. Dosen selalu siap membantu mahasiswa baik di jam perkuliahan maupun di luar jam perkuliahan sepanjang etis dan moralis</label><br>
+                    <input type="radio" name="materi4" value="Tidak Puas"> 1
+                    <input type="radio" name="materi4" value="Cukup Puas"> 2
+                    <input type="radio" name="materi4" value="Puas"> 3
+                    <input type="radio" name="materi4" value="Sangat Puas"> 4
                   </div>
                   <hr>
                   <div class="mb-3">
-                    <label>6. Dosen bersama mahasiswa membuat kontrak perkuliahan di awal pertemuan</label><br>
-                    <input type="radio" name="materi" value="1"> 1
-                    <input type="radio" name="materi" value="2"> 2
-                    <input type="radio" name="materi" value="3"> 3
-                    <input type="radio" name="materi" value="4"> 4
+                    <label for="">6. Dosen bersama mahasiswa membuat kontrak perkuliahan di awal pertemuan</label><br>
+                    <input type="radio" name="materi5" value="Tidak Puas"> 1
+                    <input type="radio" name="materi5" value="Cukup Puas"> 2
+                    <input type="radio" name="materi5" value="Puas"> 3
+                    <input type="radio" name="materi5" value="Sangat Puas"> 4
                   </div>
                   <hr>
                   <div class="mb-3">
-                    <label>7. Dosen objektif dalam penilaian</label><br>
-                    <input type="radio" name="materi" value="1"> 1
-                    <input type="radio" name="materi" value="2"> 2
-                    <input type="radio" name="materi" value="3"> 3
-                    <input type="radio" name="materi" value="4"> 4
+                    <label for="">7. Dosen objektif dalam penilaian</label><br>
+                    <input type="radio" name="materi6" value="Tidak Puas"> 1
+                    <input type="radio" name="materi6" value="Cukup Puas"> 2
+                    <input type="radio" name="materi6" value="Puas"> 3
+                    <input type="radio" name="materi6" value="Sangat Puas"> 4
                   </div>
                   <hr>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Kirim Survey</button>
+                  </div>
                 </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
             </div>
           </div>
@@ -252,7 +262,7 @@
               <div class="text-justify">
                 <h3>Petunjuk</h3>
                 <p>
-                  1. Klik 'Mulai Survei'. <br>
+                  1. Klik 'Isi Survei Sekarang!'. <br>
                   2. Jawab semua pertanyaan. <br>
                   3. Klik 'Kirim'.
                   <br>

@@ -19,13 +19,13 @@ return new class extends Migration
             $table->string('nama_dosen', 35)->nullable();
             $table->string('matakuliah', 35)->nullable();
             // Pertanyaan
-            $table->enum('survey1', ['1', '2', '3', '4'])->nullable();
-            $table->enum('survey2', ['1', '2', '3', '4'])->nullable();
-            $table->enum('survey3', ['1', '2', '3', '4'])->nullable();
-            $table->enum('survey4', ['1', '2', '3', '4'])->nullable();
-            $table->enum('survey5', ['1', '2', '3', '4'])->nullable();
-            $table->enum('survey6', ['1', '2', '3', '4'])->nullable();
-            $table->enum('survey7', ['1', '2', '3', '4'])->nullable();
+            $table->enum('survey1', ['1', '2', '3', '4', 'Tidak Puas', 'Cukup Puas', 'Puas', 'Sangat Puas'])->nullable();
+            $table->enum('survey2', ['1', '2', '3', '4', 'Tidak Puas', 'Cukup Puas', 'Puas', 'Sangat Puas'])->nullable();
+            $table->enum('survey3', ['1', '2', '3', '4', 'Tidak Puas', 'Cukup Puas', 'Puas', 'Sangat Puas'])->nullable();
+            $table->enum('survey4', ['1', '2', '3', '4', 'Tidak Puas', 'Cukup Puas', 'Puas', 'Sangat Puas'])->nullable();
+            $table->enum('survey5', ['1', '2', '3', '4', 'Tidak Puas', 'Cukup Puas', 'Puas', 'Sangat Puas'])->nullable();
+            $table->enum('survey6', ['1', '2', '3', '4', 'Tidak Puas', 'Cukup Puas', 'Puas', 'Sangat Puas'])->nullable();
+            $table->enum('survey7', ['1', '2', '3', '4', 'Tidak Puas', 'Cukup Puas', 'Puas', 'Sangat Puas'])->nullable();
             // akhir pertanyaan
             $table->timestamps();
         });
