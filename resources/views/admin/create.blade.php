@@ -176,7 +176,7 @@
       <form action="/store-dosen" method="POST">
         @csrf
         <div class="mb-3">
-          <label for="nim" class="form-label">NIM</label>
+          <label for="nim" class="form-label">NIP</label>
           <input type="number" class="form-control" id="nim" name="nim" placeholder="Masukkan NIM" required>
         </div>
         <div class="mb-3">

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\dosen;
 use Illuminate\Http\Request;
-use App\Models\Dosen; // Pastikan model Dosen diimport
 
 class dosenController extends Controller
 {
@@ -14,10 +14,11 @@ class dosenController extends Controller
     {
 
         // Mengambil semua data dosen
-        $data = Dosen::all();
+        $data = dosen::all();
+        $dosen = Dosen::orderBy('nim', 'asc')->get();
 
         // Kirim data ke view
-        return view('managedosen', compact('dosen'));
+        return view('managedosen')->with('dosen', $dosen);
     }
 
     /**

@@ -226,15 +226,17 @@
     <table>
       <thead>
         <tr>
-          <th>NIM</th>
-          <th>Nama Mahasiswa</th>
-          <th>Semester</th>
+          <th>NIP</th>
           <th>Nama Dosen</th>
           <th>Mata Kuliah</th>
+          <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
-
+      @foreach ($dosen as $d)
+        <tr>{{ $d->nim }}</tr>
+      @endforeach
+      </tbody>
     </table>
   </div>
 

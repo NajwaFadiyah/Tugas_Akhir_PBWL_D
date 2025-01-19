@@ -2,12 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dosenController;
+use App\Http\Controllers\formController;
 
 Route::post('/store-dosen', [dosenController::class, 'store']);
 
 Route::get('/', function () {
     return view('index');
 });
+
+// Untuk FormController
+Route::resource('/', formController::class);
 
 Route::get('dashboard', function () {
     return view('admin.dashboard');
