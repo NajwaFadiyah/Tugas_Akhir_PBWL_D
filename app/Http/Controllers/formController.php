@@ -23,6 +23,12 @@ class formController extends Controller
         //
     }
 
+    public function managesurvey()
+    {
+        $managesurvey = formsurvey::all();  // Ambil semua data survey
+        return view('admin.managesurvey', compact('managesurvey'));  // Kirim data ke view
+    }
+
     /**
      * Store a newly created resource in storage.
      */

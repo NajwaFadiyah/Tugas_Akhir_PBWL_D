@@ -15,9 +15,7 @@ Route::get('dashboard', function () {
     return view('admin.dashboard');
 });
 
-Route::get('managesurvey', function () {
-    return view('admin.managesurvey');
-});
+Route::get('managesurvey', [formController::class, 'managesurvey']);
 
 Route::get('managedosen', function () {
     return view('admin.managedosen');

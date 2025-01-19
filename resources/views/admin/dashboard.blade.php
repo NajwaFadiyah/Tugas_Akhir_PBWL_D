@@ -7,174 +7,189 @@
   <title>Dashboard</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
-    ** {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    height: 100vh;
-    background-color: #f0f0f0;
-}
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
 
-.sidebar {
-     width: 200px;
-     height: 100vh; /* Menetapkan tinggi sidebar menjadi 100% dari viewport */
-     background-color: #0B7bb0;
-     color: #fff;
-     padding: 30px;
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-}
+    .sidebar {
+      width: 250px;
+      background-color: #0B7bb0;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-.logo {
-  margin-right: 10px
-}
+    .logo-section {
+      display: flex;
+      align-items: center;
+      padding-top: 15px;
+      text-align: center;
+      gap: 10px;
+      border-bottom: 0.5px solid #DEE8F2;
+      padding-bottom: 10px;
+    }
 
-.logo-section {
-        display: flex;
-        align-items: center;
-        padding-top: 15px;
-        text-align: center;
-        gap: 10px;
-        border-bottom: 0.5px solid #DEE8F2;
-        padding-bottom: 10px;
-}
+    .logo-section img {
+      margin-right: 10px;
+    }
 
-.text {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
+    .text {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
 
-.text h4 {
-    font-size: 20px;
-    font-weight: bold;
-}
+    .text h4 {
+      font-size: 20px;
+      font-weight: bold;
+    }
 
-.text p {
-    font-size: 12px;
-    font-weight: normal;
-}
+    .text p {
+      font-size: 12px;
+      font-weight: normal;
+    }
 
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-}
+    .sidebar ul {
+      list-style: none;
+    }
 
-.sidebar ul li {
-    margin: 15px 0;
-    font-size: 16px;
-}
+    .sidebar ul li {
+      margin: 15px 0;
+      font-size: 16px;
+    }
 
-.sidebar ul li i {
-    margin-right: 10px;
-}
+    .sidebar ul li i {
+      margin-right: 10px;
+    }
 
-.sidebar ul li a {
-    color: #fff;
-    text-decoration: none;
-}
+    .sidebar ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
 
-.about-section {
-    margin-top: 30px;
-}
+    .about-section {
+      margin-top: 30px;
+    }
 
-.about-section h3 {
-    margin-bottom: 15px;
-    font-size: 18px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #fff;
-}
+    .about-section h3 {
+      margin-bottom: 15px;
+      font-size: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #fff;
+    }
 
-.social-icons {
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-}
+    .social-icons {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+    }
 
-.social-icons a {
-    color: #fff;
-    font-size: 20px;
-    text-decoration: none;
-}
+    .social-icons a {
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+    }
 
-.divider {
-    width: 5px;
-    background-color: #000;
-}
+    .divider {
+      width: 5px;
+      background-color: #000;
+    }
 
-.content {
-    flex: 1;
-    padding: 200px 20px; /* Mengurangi padding atas */
-    background-color:#e6d8d8;
-    overflow-y: auto;
-}
+    .content {
+      flex: 1;
+      padding: 20px;
+      background-color: #e0e0e0;
+    }
 
-.content h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-    padding-bottom: 200px;
-    border-bottom: 2px solid #7f7d7d;
-    margin-bottom: 10px; /* Mengurangi margin bawah */
-    margin-top: -20px; /* Menambahkan margin negatif untuk mengangkat judul */
-}
+    .content h1 {
+      font-size: 24px;
+      font-weight: bold;
+      padding-top: 35px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #7f7d7d;
+    }
 
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
 
-.buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
+    .button-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      height: 150px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #7f7d7d;
+      margin-top: 150px;
+    }
 
-.button-card {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    width: 180px; /* Mengatur lebar menjadi sedikit lebih besar */
-    height: 120px; /* Mengatur tinggi untuk membuatnya persegi panjang */
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-}
+    .button-card i {
+      font-size: 35px;
+      align-items: center;
+      color: #0B7bb0;
+      margin-bottom: 5px;
+    }
 
-.button-card .icon {
-    font-size: 30px;
-    margin-bottom: 10px;
-}
+    .button-card p {
+      font-size: 20spx;
+      align-items: center;
+      margin: 5px 0;
+      font-weight: bold;
+      color: #333;
+    }
 
-.button-card h2 {
-    font-size: 18px;
-    margin-bottom: 15px;
-}
+    .button-card hr {
+      width: 80%;
+      border: 0.5px solid #ccc;
+      margin: 10px 0;
+    }
 
-button {
-    background: #007bff;
-    color: #fff;
-    border: none;
-    padding: 5px 10px; /* Mengatur padding untuk tombol */
-    border-radius: 5px;
-    cursor: pointer;
-    width: 80px; /* Mengatur lebar tombol agar lebih kecil */
-}
+    button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
 
-button:hover {
-    background: #0056b3;
-}
+    button:hover {
+      background: #0056b3;
+    }
+
   </style>
 </head>
+
 <body>
   <div class="sidebar">
     <div class="logo-section">
       <img src="/logo-uinsu.png" alt="Logo UINSU" width="50px" height="50px">
       <div class="text">
           <h4>Survey Dosen</h4>
-          <p>Sistem Informasi Uinsu</p> <!-- Pindahkan ini ke bawah h4 -->
+          <p>Sistem Informasi Uinsu</p> 
       </div>
   </div>
     <ul>
@@ -201,85 +216,23 @@ button:hover {
 
   <div class="content">
     <h1>Selamat Datang di Halaman Admin!!!</h1>
-    <div class="buttons"> <!-- Wrapper for the button cards -->
+      <div class="buttons">
         <div class="button-card">
-            <div class="icon">📋</div>
-            <h2>List Survey</h2>
-            <button>Detail</button>
+          <i class="fa-solid fa-clipboard-list"></i><p>Manage Survey</p>
+          <hr>
+          <ul>
+            <a href="managesurvey"><button>Detail</button></a> 
+           </ul>
         </div>
         <div class="button-card">
-            <div class="icon">👨‍🏫</div>
-            <h2>List Dosen</h2>
-            <button>Detail</button>
+          <i class="fa-solid fa-chalkboard-teacher"></i><p>Manage Dosen</p>
+          <hr>
+          <ul>
+           <a href="managedosen"><button>Detail</button></a> 
+          </ul>
         </div>
-    </div>
-</div>
-
-<style>
-  
-  body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100px;
-  background-color: #f4f4f4;
-}
-
-.container {
-  text-align: center;
-  background: #fff;
-  padding: 0px 0px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  font-size: 10px;
-  margin-bottom: 10px;
-}
-
-.buttons {
-        display: flex; /* Mengatur layout menjadi flex */
-        justify-content: space-around; /* Menempatkan kartu secara merata */
-        margin-top: 20px; /* Mengurangi jarak dari judul */
-}
-
-.button-card {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    width: 150px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px; /* Memberikan jarak antar kartu */
-}
-
-
-.button-card .icon {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-.button-card h2 {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-button {
-  background: #007bff;
-  color: #fff;
-  border: none;
-  padding: 40px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #0056b3;
-}
+      </div>
+  </div>
 
 </body>
 </html>
