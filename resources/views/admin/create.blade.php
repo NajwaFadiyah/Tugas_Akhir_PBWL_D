@@ -180,16 +180,6 @@
           <input type="number" class="form-control" id="nim" name="nim" placeholder="Masukkan NIM" required>
         </div>
         <div class="mb-3">
-          <label for="nama_mahasiswa" class="form-label">Nama Mahasiswa</label>
-          <input type="text" class="form-control" id="nama_mahasiswa" name="nama_mahasiswa"
-            placeholder="Masukkan Nama Mahasiswa" required>
-        </div>
-        <div class="mb-3">
-          <label for="semester" class="form-label">Semester</label>
-          <input type="number" class="form-control" id="semester" name="semester" placeholder="Masukkan Semester"
-            required>
-        </div>
-        <div class="mb-3">
           <label for="nama_dosen" class="form-label">Nama Dosen</label>
           <input type="text" class="form-control" id="nama_dosen" name="nama_dosen" placeholder="Masukkan Nama Dosen"
             required>

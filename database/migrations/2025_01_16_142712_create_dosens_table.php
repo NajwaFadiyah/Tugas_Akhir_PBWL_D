@@ -13,11 +13,9 @@ return new class extends Migration
     {
         Schema::create('dosen', function (Blueprint $table) {
             $table->integer('nim')->unique();
-            $table->string('nama_mahasiswa', 35)->nullable();
-            $table->integer('semester');
             $table->string('nama_dosen', 35)->nullable();
             $table->string('matakuliah', 35)->nullable();
-             $table->timestamps(); // Menambahkan kolom created_at dan updated_at
+            $table->timestamps(); // Menambahkan kolom created_at dan updated_at
         });
     }
 

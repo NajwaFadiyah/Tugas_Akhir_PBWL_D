@@ -12,7 +12,7 @@ class dosenController extends Controller
      */
     public function index()
     {
-        
+
         // Mengambil semua data dosen
         $data = Dosen::all();
 
@@ -37,8 +37,6 @@ class dosenController extends Controller
         // Validasi input
         $request->validate([
             'nim' => 'required',
-            'nama_mahasiswa' => 'required',
-            'semester' => 'required|integer',
             'nama_dosen' => 'required',
             'matakuliah' => 'required',
         ]);
@@ -46,8 +44,6 @@ class dosenController extends Controller
         // Simpan data ke database
         Dosen::create([
             'nim' => $request->nim,
-            'nama_mahasiswa' => $request->nama_mahasiswa,
-            'semester' => $request->semester,
             'nama_dosen' => $request->nama_dosen,
             'matakuliah' => $request->matakuliah,
         ]);
