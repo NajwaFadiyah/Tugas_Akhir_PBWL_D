@@ -197,7 +197,7 @@
       </div>
     </div>
     <ul>
-      <li><i class="fa-solid fa-gauge"></i> <a href="/admin">Dashboard</a></li>
+      <li><i class="fa-solid fa-gauge"></i> <a href="/dashboard">Dashboard</a></li>
       <li><i class="fa-solid fa-list"></i> <a href="/managesurvey">Manage Survey</a></li>
       <li><i class="fa-solid fa-user-tie"></i> <a href="/managedosen">Manage Dosen</a></li>
     </ul>
@@ -221,7 +221,7 @@
   <div class="content">
     <h1>Manage Dosen</h1>
     <div class="button-actions" style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
-      <a href="/create" class="btn btn-info btn-sm" style="margin-right: 10px;">Tambah</a>
+      <a href="/create" class="btn btn-primary" style="margin-right: 10px;">Tambah</a>
     </div>
     <div class="row">
         <div class="col-sm-12">
@@ -237,23 +237,26 @@
     <table>
       <thead>
         <tr>
-          <th>NIP</th>
-          <th>Nama Dosen</th>
-          <th>Mata Kuliah</th>
-          <th>Aksi</th>
+          <th style="text-align: center">No</th>
+          <th style="text-align: center">NIP</th>
+          <th style="text-align: center">Nama Dosen</th>
+          <th style="text-align: center">Mata Kuliah</th>
+          <th style="text-align: center">Aksi</th>
         </tr>
       </thead>
       <tbody>
+        <?php $no=1; ?>
         @foreach ($dosen as $d)
           <tr>
+            <td style="text-align: center">{{ $no++ }}</td>
             <td>{{ $d->nim }}</td>
             <td>{{ $d->nama_dosen }}</td>
             <td>{{ $d->matakuliah }}</td>
-            <td>
-                <button type="submit" style="border:none; background:none;" 
-                  onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
-                  <i class="fas fa-trash text-danger"></i>
-                </button>
+            <td style="text-align: center">
+              <form action="{{ route('managedosen.destroy', $d->nim) }}" method="POST" style="display: inline;">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
               </form>
             </td>
           </tr>

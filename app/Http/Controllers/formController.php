@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\dosen;
 use App\Models\formsurvey;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,8 @@ class formController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $dosen = dosen::orderby('nim', 'asc')->get();
+        return view('index', compact('dosen'));
     }
 
     /**

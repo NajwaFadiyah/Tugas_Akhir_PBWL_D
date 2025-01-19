@@ -78,5 +78,11 @@ class dosenController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id) {}
+    public function destroy(string $nim)
+    {
+        $dosen = dosen::findOrFail($nim); // Mencari berdasarkan nim
+        $dosen->delete();
+
+        return redirect()->route('managedosen.index')->with('success', 'Data dosen berhasil dihapus.');
+    }
 }

@@ -297,65 +297,17 @@
       <h2 class="text-center mb-4">Profil Dosen</h2>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <!-- Dosen 1 -->
+        @foreach ($dosen as $item)
         <div class="col">
-          <div class="card text-center" style="border-color: #0B7BB0">
-            <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mt-3" alt="Dosen 1">
-            <div class="card-body">
-              <h5 class="card-title">Nama Dosen 1</h5>
-              <p class="card-text">Mata Kuliah 1</p>
+            <div class="card text-center" style="border-color: #0B7BB0">
+                <img src="/profil.jpg" class="rounded-circle mx-auto mt-3" alt="{{ $item->nama_dosen }}" style="width: 150px; height: 150px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $item->nama_dosen }}</h5>
+                    <p class="card-text">{{ $item->matakuliah }}</p>
+                </div>
             </div>
-          </div>
         </div>
-        <!-- Dosen 2 -->
-        <div class="col">
-          <div class="card text-center" style="border-color: #0B7BB0">
-            <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mt-3" alt="Dosen 2">
-            <div class="card-body">
-              <h5 class="card-title">Nama Dosen 2</h5>
-              <p class="card-text">Mata Kuliah 2</p>
-            </div>
-          </div>
-        </div>
-        <!-- Dosen 3 -->
-        <div class="col">
-          <div class="card text-center" style="border-color: #0B7BB0">
-            <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mt-3" alt="Dosen 3">
-            <div class="card-body">
-              <h5 class="card-title">Nama Dosen 3</h5>
-              <p class="card-text">Mata Kuliah 3</p>
-            </div>
-          </div>
-        </div>
-        <!-- Dosen 4 -->
-        <div class="col">
-          <div class="card text-center" style="border-color: #0B7BB0">
-            <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mt-3" alt="Dosen 4">
-            <div class="card-body">
-              <h5 class="card-title">Nama Dosen 4</h5>
-              <p class="card-text">Mata Kuliah 4</p>
-            </div>
-          </div>
-        </div>
-        <!-- Dosen 5 -->
-        <div class="col">
-          <div class="card text-center" style="border-color: #0B7BB0">
-            <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mt-3" alt="Dosen 5">
-            <div class="card-body">
-              <h5 class="card-title">Nama Dosen 5</h5>
-              <p class="card-text">Mata Kuliah 5</p>
-            </div>
-          </div>
-        </div>
-        <!-- Dosen 6 -->
-        <div class="col">
-          <div class="card text-center" style="border-color: #0B7BB0">
-            <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mt-3" alt="Dosen 6">
-            <div class="card-body">
-              <h5 class="card-title">Nama Dosen 6</h5>
-              <p class="card-text">Mata Kuliah 6</p>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </section>

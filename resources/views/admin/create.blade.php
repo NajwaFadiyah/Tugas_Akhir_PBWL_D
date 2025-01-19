@@ -185,9 +185,12 @@
             required>
         </div>
         <div class="mb-3">
-          <label for="mata_kuliah" class="form-label">Mata Kuliah</label>
-          <input type="text" class="form-control" id="matakuliah" name="matakuliah" placeholder="Masukkan Mata Kuliah"
-            required>
+          <label for="mata_kuliah">Matakuliah</label>
+            <select name="matakuliah" id="matakuliah" class="form-select">
+              <option class="disabled">Pilih Mata Kuliah Yang Diajarkan</option>
+              <option>Pengantar Ilmu Komputer</option>
+              <option>Algoritma & Pemrograman Terstruktur</option>
+            </select>
         </div>
         <div class="d-flex">
           <button type="submit" class="btn btn-primary">Simpan</button>
