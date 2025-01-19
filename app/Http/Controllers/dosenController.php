@@ -12,13 +12,10 @@ class dosenController extends Controller
      */
     public function index()
     {
-
-        // Mengambil semua data dosen
-        $data = dosen::all();
-        $dosen = Dosen::orderBy('nim', 'asc')->get();
+        $dosen = dosen::orderby('nim', 'asc')->get();
 
         // Kirim data ke view
-        return view('managedosen')->with('dosen', $dosen);
+        return view('admin.managedosen')->with('dosen', $dosen);
     }
 
     /**
@@ -27,7 +24,7 @@ class dosenController extends Controller
     public function create()
     {
         // Menampilkan form untuk input data baru
-        return view('admin.create');
+        return view('managedosen.create');
     }
 
     /**
@@ -43,14 +40,14 @@ class dosenController extends Controller
         ]);
 
         // Simpan data ke database
-        Dosen::create([
+        dosen::create([
             'nim' => $request->nim,
             'nama_dosen' => $request->nama_dosen,
             'matakuliah' => $request->matakuliah,
         ]);
 
         // Redirect ke halaman utama dengan pesan sukses
-        return redirect('/managedosen')->with('success', 'Data dosen berhasil disimpan.');
+        return redirect('managedosen')->with('success', 'Data dosen berhasil disimpan.');
     }
 
 

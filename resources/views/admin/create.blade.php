@@ -173,7 +173,7 @@
   <div class="form-container">
     <div class="form-wrapper">
       <h1>Form Data </h1>
-      <form action="/store-dosen" method="POST">
+      <form action="managedosen" method="POST">
         @csrf
         <div class="mb-3">
           <label for="nim" class="form-label">NIP</label>

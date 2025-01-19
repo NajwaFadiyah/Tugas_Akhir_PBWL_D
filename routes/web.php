@@ -4,8 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dosenController;
 use App\Http\Controllers\formController;
 
-Route::post('/store-dosen', [dosenController::class, 'store']);
-
 Route::get('/', function () {
     return view('index');
 });
@@ -24,6 +22,9 @@ Route::get('managesurvey', function () {
 Route::get('managedosen', function () {
     return view('admin.managedosen');
 });
+
+// untuk dosenController
+Route::resource('managedosen', dosenController::class);
 
 Route::get('create', function () {
     return view('admin.create');
