@@ -222,7 +222,6 @@
     <h1>Manage Dosen</h1>
     <div class="button-actions" style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
       <a href="/create" class="btn btn-info btn-sm" style="margin-right: 10px;">Tambah</a>
-      <button class="btn btn-danger btn-sm" onclick="confirmHapus()">Hapus</button>
     </div>
     <div class="row">
         <div class="col-sm-12">
@@ -251,9 +250,11 @@
             <td>{{ $d->nama_dosen }}</td>
             <td>{{ $d->matakuliah }}</td>
             <td>
-              <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
-                <i class="fas fa-trash"></i>
-              </button>
+                <button type="submit" style="border:none; background:none;" 
+                  onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                  <i class="fas fa-trash text-danger"></i>
+                </button>
+              </form>
             </td>
           </tr>
         @endforeach
@@ -261,14 +262,6 @@
     </table>
   </div>
 
-  <script>
-    function confirmHapus() {
-      if (confirm('Yakin ingin menghapus semua data?')) {
-        alert('Semua data berhasil dihapus (Simulasi).');
-        // Tambahkan logika untuk aksi hapus di sini
-      }
-    }
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
